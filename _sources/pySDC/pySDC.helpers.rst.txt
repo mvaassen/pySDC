@@ -1,0 +1,52 @@
+pySDC.helpers package
+=====================
+
+.. automodule:: pySDC.helpers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+pySDC.helpers.plot_helper module
+--------------------------------
+
+.. automodule:: pySDC.helpers.plot_helper
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.helpers.pysdc_helper module
+---------------------------------
+
+.. automodule:: pySDC.helpers.pysdc_helper
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.helpers.stats_helper module
+---------------------------------
+
+.. automodule:: pySDC.helpers.stats_helper
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.helpers.transfer_helper module
+------------------------------------
+
+.. automodule:: pySDC.helpers.transfer_helper
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.helpers.visualization_tools module
+----------------------------------------
+
+.. automodule:: pySDC.helpers.visualization_tools
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

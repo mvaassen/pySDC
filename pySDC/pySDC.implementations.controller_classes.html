@@ -1,0 +1,624 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pySDC.implementations.controller_classes package &#8212; pySDC 2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pySDC.implementations.datatype_classes package" href="pySDC.implementations.datatype_classes.html" />
+    <link rel="prev" title="pySDC.implementations.collocation_classes package" href="pySDC.implementations.collocation_classes.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pySDC.implementations.datatype_classes.html" title="pySDC.implementations.datatype_classes package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pySDC.implementations.collocation_classes.html" title="pySDC.implementations.collocation_classes package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pySDC 2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pySDC.implementations.html" accesskey="U">pySDC.implementations package</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pySDC.implementations.controller_classes">
+<span id="pysdc-implementations-controller-classes-package"></span><h1>pySDC.implementations.controller_classes package<a class="headerlink" href="#module-pySDC.implementations.controller_classes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pySDC.implementations.controller_classes.allinclusive_classic_MPI">
+<span id="pysdc-implementations-controller-classes-allinclusive-classic-mpi-module"></span><h2>pySDC.implementations.controller_classes.allinclusive_classic_MPI module<a class="headerlink" href="#module-pySDC.implementations.controller_classes.allinclusive_classic_MPI" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI">
+<em class="property">class </em><code class="descclassname">pySDC.implementations.controller_classes.allinclusive_classic_MPI.</code><code class="descname">allinclusive_classic_MPI</code><span class="sig-paren">(</span><em>controller_params</em>, <em>description</em>, <em>comm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_MPI.html#allinclusive_classic_MPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pySDC.core.html#pySDC.core.Controller.controller" title="pySDC.core.Controller.controller"><code class="xref py py-class docutils literal"><span class="pre">pySDC.core.Controller.controller</span></code></a></p>
+<p>PFASST controller, running parallel version of PFASST in classical style</p>
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.pfasst">
+<code class="descname">pfasst</code><span class="sig-paren">(</span><em>comm</em>, <em>num_procs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_MPI.html#allinclusive_classic_MPI.pfasst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.pfasst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function including the stages of SDC, MLSDC and PFASST (the &#8220;controller&#8221;)</p>
+<p>For the workflow of this controller, check out one of our PFASST talks</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>comm</strong> &#8211; communicator</li>
+<li><strong>num_procs</strong> &#8211; number of active processors</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.predictor">
+<code class="descname">predictor</code><span class="sig-paren">(</span><em>comm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_MPI.html#allinclusive_classic_MPI.predictor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.predictor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predictor function, extracted from the stepwise implementation (will be also used by matrix sweppers)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>comm</strong> &#8211; communicator</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.recv">
+<em class="property">static </em><code class="descname">recv</code><span class="sig-paren">(</span><em>target</em>, <em>source</em>, <em>tag</em>, <em>comm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_MPI.html#allinclusive_classic_MPI.recv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.recv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; process/level which will receive the values</li>
+<li><strong>source</strong> &#8211; process/level which initiated the send</li>
+<li><strong>tag</strong> &#8211; identifier to check if this message is really for me</li>
+<li><strong>comm</strong> &#8211; communicator</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.restart_block">
+<code class="descname">restart_block</code><span class="sig-paren">(</span><em>size</em>, <em>time</em>, <em>u0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_MPI.html#allinclusive_classic_MPI.restart_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.restart_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper routine to reset/restart block of (active) steps</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>size</strong> &#8211; number of active time steps</li>
+<li><strong>time</strong> &#8211; current time</li>
+<li><strong>u0</strong> &#8211; initial value to distribute across the steps</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">block of (all) steps</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>u0</em>, <em>t0</em>, <em>Tend</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_MPI.html#allinclusive_classic_MPI.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main driver for running the parallel version of SDC, MSSDC, MLSDC and PFASST</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>u0</strong> &#8211; initial values</li>
+<li><strong>t0</strong> &#8211; starting time</li>
+<li><strong>Tend</strong> &#8211; ending time</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">end values on the finest level
+stats object containing statistics for each step, each level and each iteration</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.send">
+<em class="property">static </em><code class="descname">send</code><span class="sig-paren">(</span><em>source</em>, <em>target</em>, <em>tag</em>, <em>comm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_MPI.html#allinclusive_classic_MPI.send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_MPI.allinclusive_classic_MPI.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> &#8211; process/level which has the new values</li>
+<li><strong>target</strong> &#8211; process/level which will receive the values</li>
+<li><strong>tag</strong> &#8211; identifier for this message</li>
+<li><strong>comm</strong> &#8211; communicator</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pySDC.implementations.controller_classes.allinclusive_classic_nonMPI">
+<span id="pysdc-implementations-controller-classes-allinclusive-classic-nonmpi-module"></span><h2>pySDC.implementations.controller_classes.allinclusive_classic_nonMPI module<a class="headerlink" href="#module-pySDC.implementations.controller_classes.allinclusive_classic_nonMPI" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI">
+<em class="property">class </em><code class="descclassname">pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.</code><code class="descname">allinclusive_classic_nonMPI</code><span class="sig-paren">(</span><em>num_procs</em>, <em>controller_params</em>, <em>description</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_nonMPI.html#allinclusive_classic_nonMPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pySDC.core.html#pySDC.core.Controller.controller" title="pySDC.core.Controller.controller"><code class="xref py py-class docutils literal"><span class="pre">pySDC.core.Controller.controller</span></code></a></p>
+<p>PFASST controller, running serialized version of PFASST in classical style</p>
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI.pfasst">
+<code class="descname">pfasst</code><span class="sig-paren">(</span><em>S</em>, <em>num_procs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_nonMPI.html#allinclusive_classic_nonMPI.pfasst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI.pfasst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function including the stages of SDC, MLSDC and PFASST (the &#8220;controller&#8221;)</p>
+<p>For the workflow of this controller, check out one of our PFASST talks</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>S</strong> &#8211; currently active step</li>
+<li><strong>num_procs</strong> &#8211; number of active processors</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">updated step</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI.recv">
+<em class="property">static </em><code class="descname">recv</code><span class="sig-paren">(</span><em>target</em>, <em>source</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_nonMPI.html#allinclusive_classic_nonMPI.recv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI.recv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; level which will receive the values</li>
+<li><strong>source</strong> &#8211; level which initiated the send</li>
+<li><strong>tag</strong> &#8211; identifier to check if this message is really for me</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI.restart_block">
+<code class="descname">restart_block</code><span class="sig-paren">(</span><em>active_slots</em>, <em>time</em>, <em>u0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_nonMPI.html#allinclusive_classic_nonMPI.restart_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI.restart_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper routine to reset/restart block of (active) steps</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>active_slots</strong> &#8211; list of active steps</li>
+<li><strong>time</strong> &#8211; new times for the steps</li>
+<li><strong>u0</strong> &#8211; initial value to distribute across the steps</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>u0</em>, <em>t0</em>, <em>Tend</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_nonMPI.html#allinclusive_classic_nonMPI.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main driver for running the serial version of SDC, MSSDC, MLSDC and PFASST (virtual parallelism)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>u0</strong> &#8211; initial values</li>
+<li><strong>t0</strong> &#8211; starting time</li>
+<li><strong>Tend</strong> &#8211; ending time</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">end values on the finest level
+stats object containing statistics for each step, each level and each iteration</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI.send">
+<em class="property">static </em><code class="descname">send</code><span class="sig-paren">(</span><em>source</em>, <em>tag</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_classic_nonMPI.html#allinclusive_classic_nonMPI.send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_classic_nonMPI.allinclusive_classic_nonMPI.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> &#8211; level which has the new values</li>
+<li><strong>tag</strong> &#8211; identifier for this message</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pySDC.implementations.controller_classes.allinclusive_multigrid_MPI">
+<span id="pysdc-implementations-controller-classes-allinclusive-multigrid-mpi-module"></span><h2>pySDC.implementations.controller_classes.allinclusive_multigrid_MPI module<a class="headerlink" href="#module-pySDC.implementations.controller_classes.allinclusive_multigrid_MPI" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI">
+<em class="property">class </em><code class="descclassname">pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.</code><code class="descname">allinclusive_multigrid_MPI</code><span class="sig-paren">(</span><em>controller_params</em>, <em>description</em>, <em>comm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_MPI.html#allinclusive_multigrid_MPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pySDC.core.html#pySDC.core.Controller.controller" title="pySDC.core.Controller.controller"><code class="xref py py-class docutils literal"><span class="pre">pySDC.core.Controller.controller</span></code></a></p>
+<p>PFASST controller, running parallel version of PFASST in blocks (MG-style)</p>
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.pfasst">
+<code class="descname">pfasst</code><span class="sig-paren">(</span><em>comm</em>, <em>num_procs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_MPI.html#allinclusive_multigrid_MPI.pfasst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.pfasst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function including the stages of SDC, MLSDC and PFASST (the &#8220;controller&#8221;)</p>
+<p>For the workflow of this controller, check out one of our PFASST talks</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>comm</strong> &#8211; communicator</li>
+<li><strong>num_procs</strong> &#8211; number of active processors</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.predictor">
+<code class="descname">predictor</code><span class="sig-paren">(</span><em>comm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_MPI.html#allinclusive_multigrid_MPI.predictor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.predictor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predictor function, extracted from the stepwise implementation (will be also used by matrix sweppers)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>comm</strong> &#8211; communicator</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.recv">
+<em class="property">static </em><code class="descname">recv</code><span class="sig-paren">(</span><em>target</em>, <em>source</em>, <em>tag</em>, <em>comm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_MPI.html#allinclusive_multigrid_MPI.recv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.recv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; process/level which will receive the values</li>
+<li><strong>source</strong> &#8211; process/level which initiated the send</li>
+<li><strong>tag</strong> &#8211; identifier to check if this message is really for me</li>
+<li><strong>comm</strong> &#8211; communicator</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.restart_block">
+<code class="descname">restart_block</code><span class="sig-paren">(</span><em>size</em>, <em>time</em>, <em>u0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_MPI.html#allinclusive_multigrid_MPI.restart_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.restart_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper routine to reset/restart block of (active) steps</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>size</strong> &#8211; number of active time steps</li>
+<li><strong>time</strong> &#8211; current time</li>
+<li><strong>u0</strong> &#8211; initial value to distribute across the steps</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">block of (all) steps</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>u0</em>, <em>t0</em>, <em>Tend</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_MPI.html#allinclusive_multigrid_MPI.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main driver for running the parallel version of SDC, MSSDC, MLSDC and PFASST</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>u0</strong> &#8211; initial values</li>
+<li><strong>t0</strong> &#8211; starting time</li>
+<li><strong>Tend</strong> &#8211; ending time</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">end values on the finest level
+stats object containing statistics for each step, each level and each iteration</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.send">
+<em class="property">static </em><code class="descname">send</code><span class="sig-paren">(</span><em>source</em>, <em>target</em>, <em>tag</em>, <em>comm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_MPI.html#allinclusive_multigrid_MPI.send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_MPI.allinclusive_multigrid_MPI.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> &#8211; process/level which has the new values</li>
+<li><strong>target</strong> &#8211; process/level which will receive the values</li>
+<li><strong>tag</strong> &#8211; identifier for this message</li>
+<li><strong>comm</strong> &#8211; communicator</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI">
+<span id="pysdc-implementations-controller-classes-allinclusive-multigrid-nonmpi-module"></span><h2>pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI module<a class="headerlink" href="#module-pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI">
+<em class="property">class </em><code class="descclassname">pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.</code><code class="descname">allinclusive_multigrid_nonMPI</code><span class="sig-paren">(</span><em>num_procs</em>, <em>controller_params</em>, <em>description</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_nonMPI.html#allinclusive_multigrid_nonMPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pySDC.core.html#pySDC.core.Controller.controller" title="pySDC.core.Controller.controller"><code class="xref py py-class docutils literal"><span class="pre">pySDC.core.Controller.controller</span></code></a></p>
+<p>PFASST controller, running serialized version of PFASST in blocks (MG-style)</p>
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.pfasst">
+<code class="descname">pfasst</code><span class="sig-paren">(</span><em>MS</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_nonMPI.html#allinclusive_multigrid_nonMPI.pfasst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.pfasst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main function including the stages of SDC, MLSDC and PFASST (the &#8220;controller&#8221;)</p>
+<p>For the workflow of this controller, check out one of our PFASST talks</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>MS</strong> &#8211; all active steps</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">all active steps</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.predictor">
+<code class="descname">predictor</code><span class="sig-paren">(</span><em>MS</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_nonMPI.html#allinclusive_multigrid_nonMPI.predictor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.predictor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predictor function, extracted from the stepwise implementation (will be also used by matrix sweppers)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>MS</strong> &#8211; all active steps</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">all active steps</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.recv">
+<em class="property">static </em><code class="descname">recv</code><span class="sig-paren">(</span><em>target</em>, <em>source</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_nonMPI.html#allinclusive_multigrid_nonMPI.recv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.recv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; level which will receive the values</li>
+<li><strong>source</strong> &#8211; level which initiated the send</li>
+<li><strong>tag</strong> &#8211; identifier to check if this message is really for me</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.restart_block">
+<code class="descname">restart_block</code><span class="sig-paren">(</span><em>active_slots</em>, <em>time</em>, <em>u0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_nonMPI.html#allinclusive_multigrid_nonMPI.restart_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.restart_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper routine to reset/restart block of (active) steps</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>active_slots</strong> &#8211; list of active steps</li>
+<li><strong>time</strong> &#8211; list of new times</li>
+<li><strong>u0</strong> &#8211; initial value to distribute across the steps</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>u0</em>, <em>t0</em>, <em>Tend</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_nonMPI.html#allinclusive_multigrid_nonMPI.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main driver for running the serial version of SDC, MSSDC, MLSDC and PFASST (virtual parallelism)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>u0</strong> &#8211; initial values</li>
+<li><strong>t0</strong> &#8211; starting time</li>
+<li><strong>Tend</strong> &#8211; ending time</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">end values on the finest level
+stats object containing statistics for each step, each level and each iteration</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.send">
+<em class="property">static </em><code class="descname">send</code><span class="sig-paren">(</span><em>source</em>, <em>tag</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pySDC/implementations/controller_classes/allinclusive_multigrid_nonMPI.html#allinclusive_multigrid_nonMPI.send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI.allinclusive_multigrid_nonMPI.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> &#8211; level which has the new values</li>
+<li><strong>tag</strong> &#8211; identifier for this message</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pySDC.implementations.controller_classes package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-pySDC.implementations.controller_classes.allinclusive_classic_MPI">pySDC.implementations.controller_classes.allinclusive_classic_MPI module</a></li>
+<li><a class="reference internal" href="#module-pySDC.implementations.controller_classes.allinclusive_classic_nonMPI">pySDC.implementations.controller_classes.allinclusive_classic_nonMPI module</a></li>
+<li><a class="reference internal" href="#module-pySDC.implementations.controller_classes.allinclusive_multigrid_MPI">pySDC.implementations.controller_classes.allinclusive_multigrid_MPI module</a></li>
+<li><a class="reference internal" href="#module-pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI">pySDC.implementations.controller_classes.allinclusive_multigrid_nonMPI module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pySDC.implementations.collocation_classes.html"
+                        title="previous chapter">pySDC.implementations.collocation_classes package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pySDC.implementations.datatype_classes.html"
+                        title="next chapter">pySDC.implementations.datatype_classes package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/pySDC/pySDC.implementations.controller_classes.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pySDC.implementations.datatype_classes.html" title="pySDC.implementations.datatype_classes package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pySDC.implementations.collocation_classes.html" title="pySDC.implementations.collocation_classes package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pySDC 2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="pySDC.implementations.html" >pySDC.implementations package</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Robert Speck.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

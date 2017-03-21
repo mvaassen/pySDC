@@ -1,0 +1,60 @@
+pySDC.implementations.problem_classes.boussinesq_helpers package
+================================================================
+
+.. automodule:: pySDC.implementations.problem_classes.boussinesq_helpers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+pySDC.implementations.problem_classes.boussinesq_helpers.build2DFDMatrix module
+-------------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.boussinesq_helpers.build2DFDMatrix
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.boussinesq_helpers.buildBoussinesq2DMatrix module
+---------------------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.boussinesq_helpers.buildBoussinesq2DMatrix
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.boussinesq_helpers.buildFDMatrix module
+-----------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.boussinesq_helpers.buildFDMatrix
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.boussinesq_helpers.helper_classes module
+------------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.boussinesq_helpers.helper_classes
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.boussinesq_helpers.standard_integrators module
+------------------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.boussinesq_helpers.standard_integrators
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.boussinesq_helpers.unflatten module
+-------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.boussinesq_helpers.unflatten
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

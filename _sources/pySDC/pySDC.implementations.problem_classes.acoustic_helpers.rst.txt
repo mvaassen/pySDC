@@ -1,0 +1,36 @@
+pySDC.implementations.problem_classes.acoustic_helpers package
+==============================================================
+
+.. automodule:: pySDC.implementations.problem_classes.acoustic_helpers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+pySDC.implementations.problem_classes.acoustic_helpers.buildFDMatrix module
+---------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.acoustic_helpers.buildFDMatrix
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.acoustic_helpers.buildWave1DMatrix module
+-------------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.acoustic_helpers.buildWave1DMatrix
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.acoustic_helpers.standard_integrators module
+----------------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.acoustic_helpers.standard_integrators
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

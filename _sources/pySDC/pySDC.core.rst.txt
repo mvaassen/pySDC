@@ -1,0 +1,92 @@
+pySDC.core package
+==================
+
+.. automodule:: pySDC.core
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+pySDC.core.BaseTransfer module
+------------------------------
+
+.. automodule:: pySDC.core.BaseTransfer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.core.Collocation module
+-----------------------------
+
+.. automodule:: pySDC.core.Collocation
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.core.Controller module
+----------------------------
+
+.. automodule:: pySDC.core.Controller
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.core.Errors module
+------------------------
+
+.. automodule:: pySDC.core.Errors
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.core.Hooks module
+-----------------------
+
+.. automodule:: pySDC.core.Hooks
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.core.Level module
+-----------------------
+
+.. automodule:: pySDC.core.Level
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.core.Problem module
+-------------------------
+
+.. automodule:: pySDC.core.Problem
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.core.SpaceTransfer module
+-------------------------------
+
+.. automodule:: pySDC.core.SpaceTransfer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.core.Step module
+----------------------
+
+.. automodule:: pySDC.core.Step
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.core.Sweeper module
+-------------------------
+
+.. automodule:: pySDC.core.Sweeper
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

@@ -1,0 +1,76 @@
+pySDC.implementations.collocation_classes package
+=================================================
+
+.. automodule:: pySDC.implementations.collocation_classes
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+pySDC.implementations.collocation_classes.equidistant module
+------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.collocation_classes.equidistant
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.collocation_classes.equidistant_inner module
+------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.collocation_classes.equidistant_inner
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.collocation_classes.equidistant_right module
+------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.collocation_classes.equidistant_right
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.collocation_classes.equidistant_spline_right module
+-------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.collocation_classes.equidistant_spline_right
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.collocation_classes.gauss_legendre module
+---------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.collocation_classes.gauss_legendre
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.collocation_classes.gauss_lobatto module
+--------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.collocation_classes.gauss_lobatto
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.collocation_classes.gauss_radau_left module
+-----------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.collocation_classes.gauss_radau_left
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.collocation_classes.gauss_radau_right module
+------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.collocation_classes.gauss_radau_right
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

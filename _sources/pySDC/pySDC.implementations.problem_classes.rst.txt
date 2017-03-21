@@ -1,0 +1,164 @@
+pySDC.implementations.problem_classes package
+=============================================
+
+.. automodule:: pySDC.implementations.problem_classes
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+
+    pySDC.implementations.problem_classes.acoustic_helpers
+    pySDC.implementations.problem_classes.boussinesq_helpers
+
+Submodules
+----------
+
+pySDC.implementations.problem_classes.AcousticAdvection_1D_FD_imex module
+-------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.AcousticAdvection_1D_FD_imex
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.AdvectionDiffusion_1D_FEniCS_matrix_periodic module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.AdvectionDiffusion_1D_FEniCS_matrix_periodic
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.AdvectionEquation_1D_FD module
+--------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.AdvectionEquation_1D_FD
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.AdvectionEquation_1D_FD_dirichlet module
+------------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.AdvectionEquation_1D_FD_dirichlet
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.Auzinger_implicit module
+--------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.Auzinger_implicit
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.Boussinesq_2D_FD_imex module
+------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.Boussinesq_2D_FD_imex
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.FastWaveSlowWave_0D module
+----------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.FastWaveSlowWave_0D
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.GeneralizedFisher_1D_FD_implicit module
+-----------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.GeneralizedFisher_1D_FD_implicit
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.GrayScott_1D_FEniCS_implicit module
+-------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.GrayScott_1D_FEniCS_implicit
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.HeatEquation_1D_FD module
+---------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.HeatEquation_1D_FD
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.HeatEquation_1D_FD_forced module
+----------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.HeatEquation_1D_FD_forced
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.HeatEquation_1D_FD_periodic module
+------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.HeatEquation_1D_FD_periodic
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.HeatEquation_1D_FEniCS_matrix_forced module
+---------------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.HeatEquation_1D_FEniCS_matrix_forced
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.HeatEquation_1D_FEniCS_weak_forced module
+-------------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.HeatEquation_1D_FEniCS_weak_forced
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.HeatEquation_2D_FD_periodic module
+------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.HeatEquation_2D_FD_periodic
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.PenningTrap_3D module
+-----------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.PenningTrap_3D
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.Van_der_Pol_implicit module
+-----------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.Van_der_Pol_implicit
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.problem_classes.VorticityVelocity_2D_FEniCS_periodic module
+---------------------------------------------------------------------------------
+
+.. automodule:: pySDC.implementations.problem_classes.VorticityVelocity_2D_FEniCS_periodic
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

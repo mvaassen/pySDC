@@ -1,0 +1,44 @@
+pySDC.implementations.datatype_classes package
+==============================================
+
+.. automodule:: pySDC.implementations.datatype_classes
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+pySDC.implementations.datatype_classes.complex_mesh module
+----------------------------------------------------------
+
+.. automodule:: pySDC.implementations.datatype_classes.complex_mesh
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.datatype_classes.fenics_mesh module
+---------------------------------------------------------
+
+.. automodule:: pySDC.implementations.datatype_classes.fenics_mesh
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.datatype_classes.mesh module
+--------------------------------------------------
+
+.. automodule:: pySDC.implementations.datatype_classes.mesh
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pySDC.implementations.datatype_classes.particles module
+-------------------------------------------------------
+
+.. automodule:: pySDC.implementations.datatype_classes.particles
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
