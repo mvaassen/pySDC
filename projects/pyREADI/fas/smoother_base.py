@@ -1,8 +1,8 @@
 # coding=utf-8
 import abc
 from abc import ABCMeta, abstractmethod
-from fas.system_operator import SystemOperator
-from tstepping.impl_euler_new import ImplEulerScheme
+from projects.pyREADI.fas.system_operator import SystemOperator
+from projects.pyREADI.tstepping.impl_euler_new import ImplEulerScheme
 import scipy.sparse as sp
 
 

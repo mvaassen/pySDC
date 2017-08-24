@@ -107,7 +107,7 @@ class generalized_fisher(ptype):
         bla[0:2] = np.array([1., 11.])
         M = sp.vstack([bla, M, bla[::-1]])
         #print(M.todense())
-        M = sp.csr_matrix(M)
+        M = sp.csc_matrix(M)
 
         bla = sla.inv(M)[1:-1, 1:-1].dot(a1d[1:-1, 1:-1])
 

@@ -5,8 +5,8 @@ import scipy.sparse as sp
 import scipy.sparse.linalg as sla
 import matplotlib.pyplot as plt
 
-from fas.smoother_base import SmootherBase
-from fas.system_operator import SystemOperator
+from projects.pyREADI.fas.smoother_base import SmootherBase
+from projects.pyREADI.fas.system_operator import SystemOperator
 
 
 class NonlinearGaussSeidel(SmootherBase):

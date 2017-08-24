@@ -51,6 +51,11 @@ class generalized_fisher_wtf(ptype):
         #self.A = self.__get_A(self.params.nvars, self.dx)
         self.M, self.A, self.L = self.__get_A_cmpct(self.params.nvars, self.dx)
 
+        # bla = self.__get_A(self.params.nvars, self.dx)
+        # self.M = sp.eye(bla.shape[0])
+        # self.A = bla
+        # self.L = bla
+
 
     @staticmethod
     def __get_A(N, dx):
@@ -108,11 +113,11 @@ class generalized_fisher_wtf(ptype):
         M = sp.vstack([bla, M, bla[::-1]])
         # print(M.todense())
 
-        M = sp.csr_matrix(M)
+        M = sp.csc_matrix(M)
 
         return MM, Ma1d, sla.inv(M).dot(a1d)
 
-    def extend(self, u0, t):
+    def extend_sdc(self, u0, t):
         u = self.dtype_u(u0)
 
         nu = self.params.nu

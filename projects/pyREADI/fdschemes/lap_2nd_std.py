@@ -1,4 +1,4 @@
-from fdschemes.lap_explicit_base import LapExplicitBase
+from projects.pyREADI.fdschemes.lap_explicit_base import LapExplicitBase
 import scipy.sparse as sp
 
 

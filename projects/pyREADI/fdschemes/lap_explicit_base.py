@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-from fdschemes.laplacian_base import LaplacianBase
+from projects.pyREADI.fdschemes.laplacian_base import LaplacianBase
 import scipy.sparse as sp
 
 __author__ = 'vaassen'

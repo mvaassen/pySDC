@@ -1,5 +1,5 @@
-from fas.transfer_base import TransferBase
-from rdmodels.rdmodel_base import RDModelBase
+from projects.pyREADI.fas.transfer_base import TransferBase
+#from projects.pyREADI.rdmodels.rdmodel_base import RDModelBase
 import numpy as np
 import scipy.sparse.linalg as spla
 
@@ -7,6 +7,7 @@ import scipy.sparse.linalg as spla
 class ImplEulerScheme(object):
 
     def __init__(self, rdmodel, dt):
+        from projects.pyREADI.rdmodels.rdmodel_base import RDModelBase
         assert isinstance(rdmodel, RDModelBase)
 
         self.rdmodel = rdmodel

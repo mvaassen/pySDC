@@ -1,4 +1,4 @@
-from fas.transfer_base import TransferBase
+from projects.pyREADI.fas.transfer_base import TransferBase
 import numpy as np
 import scipy.sparse as sp
 

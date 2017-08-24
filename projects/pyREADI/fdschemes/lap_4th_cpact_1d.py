@@ -1,4 +1,4 @@
-from fdschemes.laplacian_base import LaplacianBase
+from projects.pyREADI.fdschemes.laplacian_base import LaplacianBase
 import numpy as np
 import scipy.sparse as sp
 

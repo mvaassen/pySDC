@@ -88,7 +88,7 @@ class generic_implicit_compact_alt(sweeper):
         res = self.integrate()
         for m in range(self.coll.num_nodes):
             # add u0 and subtract u at current node
-            res[m].values += P.M.dot(P.extend(L.u[0], L.time).values - P.extend(L.u[m + 1], L.time + L.dt * self.coll.nodes[m]).values)
+            res[m].values += P.M.dot(P.extend_sdc(L.u[0], L.time).values - P.extend_sdc(L.u[m + 1], L.time + L.dt * self.coll.nodes[m]).values)
             # add tau if associated
             if L.tau is not None:
                 res[m] += L.tau[m]
@@ -133,7 +133,7 @@ class generic_implicit_compact_alt(sweeper):
                 integral[m] -= L.dt * self.QI[m + 1, j] * L.f[j]
 
             # add initial value
-            integral[m] += P.extend(L.u[0], L.time)
+            integral[m] += P.extend_sdc(L.u[0], L.time)
             # add tau if associated
             if L.tau is not None:
                 integral[m] += L.tau[m]

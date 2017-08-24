@@ -3,9 +3,9 @@ import scipy.linalg as la
 import scipy.sparse.linalg as spla
 import matplotlib.pyplot as plt
 
-from tools.plot_tools import eigvalue_plot_list
+from projects.pyREADI.tools.plot_tools import eigvalue_plot_list
 
-from fas.multigrid_base import MultigridBase
+from projects.pyREADI.fas.multigrid_base import MultigridBase
 
 
 class FASMultigrid(MultigridBase):
@@ -50,7 +50,7 @@ class FASMultigrid(MultigridBase):
 
             #err = (w - self._rdmodel.bc(inner_grid, t)).flatten()
 
-            #print('residual: %e' % la.norm(residual.flatten(), ord=np.inf))
+            print('residual: %e' % la.norm(residual.flatten(), ord=np.inf))
             #print('error: %e' % la.norm(err, ord=np.inf))
             #plt.show()
 

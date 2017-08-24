@@ -1,8 +1,8 @@
 import abc
 from abc import ABCMeta, abstractmethod
-from rdmodels.rdmodel_base import RDModelBase
-from fas.system_operator import SystemOperator
-from tstepping.impl_euler_new import ImplEulerScheme
+#from projects.pyREADI.rdmodels.rdmodel_base import RDModelBase
+from projects.pyREADI.fas.system_operator import SystemOperator
+from projects.pyREADI.tstepping.impl_euler_new import ImplEulerScheme
 import numpy as np
 import scipy.sparse as sp
 import time
@@ -38,6 +38,7 @@ class MultigridBase(object):
             *args: Variable length argument list
             **kwargs: Arbitrary keyword arguments
         """
+        from projects.pyREADI.rdmodels.rdmodel_base import RDModelBase
         assert isinstance(rdmodel, RDModelBase)
         #assert 0 <= nlevels <= np.log2(nx+1)
 
@@ -49,8 +50,8 @@ class MultigridBase(object):
 
         print(self._nx_list)
 
-        self.vh = [np.array([np.zeros(i**self._rdmodel.ndims)] * self._rdmodel.nspecies) for i in self._nx_list]
-        self.fh = [np.array([np.zeros(i**self._rdmodel.ndims)] * self._rdmodel.nspecies) for i in self._nx_list]
+        self.vh = [np.array([np.zeros(i**self._rdmodel.params.nvars)] * self._rdmodel.params.nspecies) for i in self._nx_list]
+        self.fh = [np.array([np.zeros(i**self._rdmodel.params.nvars)] * self._rdmodel.params.nspecies) for i in self._nx_list]
 
         self.trans = []
         self.smoo = []
@@ -106,5 +107,5 @@ class MultigridBase(object):
         """
         for l in range(self.nlevels-1):
             self.trans.append(transfer_class(nx_fine=self._nx_list[l],
-                                             nx_coarse=self._nx_list[l + 1], ndims=self._rdmodel.ndims,
-                                             bc_type=type(self._rdmodel.bc_handler).__name__, *args, **kwargs))
+                                             nx_coarse=self._nx_list[l + 1], ndims=self._rdmodel.params.ndims,
+                                             bc_type=type(self._rdmodel.params.bc_type).__name__, *args, **kwargs))
