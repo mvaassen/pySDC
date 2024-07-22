@@ -1,17 +1,38 @@
 from __future__ import division
 
+import sys
+sys.path.append('/home/zam/vaassen/PycharmProjects/pyRD/')
+
 import numpy as np
 import scipy.sparse as sp
-import scipy.sparse.linalg as sla
 from scipy.sparse.linalg import spsolve
-import matplotlib.pyplot as plt
 
 from pySDC.core.Problem import ptype
 from pySDC.core.Errors import ParameterError, ProblemError
 
+# from projects.pyREADI.rdmodels.generalized_fisher_1d import GeneralizedFisher1D
+# from projects.pyREADI.tstepping.impl_euler_new import ImplEulerScheme
+# from projects.pyREADI.tstepping.implicit_timestepper import ImplicitTimeIntegrator
+# from projects.pyREADI.tstepping.fwd_euler import solve_t
+# from projects.pyREADI.fdschemes.lap_4th_cpact_1d import Lap4thCpact1D
+# from projects.pyREADI.boundarytypes.dirichlet_problem import DirichletProblem
+# from projects.pyREADI.fas.fas_multigrid import FASMultigrid
+# from projects.pyREADI.fas.linear_transfer_nd import LinearTransferND
+# from projects.pyREADI.fas.nonlinear_gauss_seidel import NonlinearGaussSeidel
+
+from rdmodels.generalized_fisher_1d import GeneralizedFisher1D
+from tstepping.impl_euler_new import ImplEulerScheme
+from tstepping.implicit_timestepper import ImplicitTimeIntegrator
+from tstepping.fwd_euler import solve_t
+from fdschemes.lap_4th_cpact_1d import Lap4thCpact1D
+from boundarytypes.dirichlet_problem import DirichletProblem
+from fas.fas_multigrid import FASMultigrid
+from fas.linear_transfer_nd import LinearTransferND
+from fas.nonlinear_gauss_seidel import NonlinearGaussSeidel
+
 
 # noinspection PyUnusedLocal
-class generalized_fisher(ptype):
+class generalized_fisher_MG(ptype):
     """
     Example implementing the generalized Fisher's equation in 1D with finite differences
 
@@ -31,7 +52,7 @@ class generalized_fisher(ptype):
         """
 
         # these parameters will be used later, so assert their existence
-        essential_keys = ['nvars', 'nu', 'lambda0', 'newton_maxiter', 'newton_tol', 'interval', 'expl_boundary']
+        essential_keys = ['nvars', 'nu', 'lambda0', 'mg_maxiter', 'mg_restol', 'interval']
         for key in essential_keys:
             if key not in problem_params:
                 msg = 'need %s to instantiate problem, only got %s' % (key, str(problem_params.keys()))
@@ -42,19 +63,30 @@ class generalized_fisher(ptype):
             raise ProblemError('setup requires nvars = 2^p - 1')
 
         # invoke super init, passing number of dofs, dtype_u and dtype_f
-        super(generalized_fisher, self).__init__(problem_params['nvars'], dtype_u, dtype_f, problem_params)
+        super(generalized_fisher_MG, self).__init__(problem_params['nvars'], dtype_u, dtype_f, problem_params)
 
         # compute dx and get discretization matrix A
         self.dx = (self.params.interval[1] - self.params.interval[0]) / (self.params.nvars + 1)
+        self.A = self.__get_A(self.params.nvars, self.dx)
 
-        #self.A = self.__get_A(self.params.nvars, self.dx)
-        if self.params.expl_boundary:
-            print('hello')
-            #self.A = self.__get_A_cmpct_expl_boundary(self.params.nvars, self.dx)
-        else:
-            print('hello')
-            self.A = self.__get_A_cmpct(self.params.nvars, self.dx)
+        # cast model into my own data structure
+        self.rdmodel = GeneralizedFisher1D(self.params.nvars, self.params.interval, DirichletProblem, None, 1, np.array([1]), self.params.lambda0, self.params.nu)
 
+        # Here comes Multigrid
+        self.factor = 0
+        self._one_multigrid_to_rule_them_all()
+
+    def _one_multigrid_to_rule_them_all(self):
+        # Initialize FAS multigrid solver
+        self._mg = FASMultigrid(self.rdmodel, galerkin=False)
+        self._mg.attach_transfer(LinearTransferND)
+
+        # Set up fine grid system operator according to specified scheme and model
+        sysop = ImplEulerScheme(self.rdmodel, lambda _: self.factor)
+
+        # Attach FAS smoother and fine grid system operator
+        # MG is responsible for the hierarchy setup
+        self._mg.attach_smoother(NonlinearGaussSeidel, sysop)
 
     @staticmethod
     def __get_A(N, dx):
@@ -75,84 +107,17 @@ class generalized_fisher(ptype):
 
         return A
 
-    @staticmethod
-    def __get_A_cmpct(N, dx):
-        """
-        Helper function to assemble FD matrix A in sparse format
-
-        Args:
-            N (int): number of dofs
-            dx (float): distance between two spatial nodes
-
-        Returns:
-            scipy.sparse.csc_matrix: matrix A in CSC format
-        """
-
-        a = 6. / 5
-        stencil = [a, -2 * a, a]
-        diags = [-1, 0, 1]
-        a1d = sp.diags(stencil, diags, shape=(N + 2, N + 2), format='lil')[1:-1, :]
-
-        bla = np.zeros(N + 2)
-        bla[0:4] = np.array([13., -27., 15., -1.])
-        a1d = sp.vstack([bla, a1d, bla[::-1]])
-        #print(a1d.todense())
-        a1d *= 1.0 / (dx ** 2)
-        a1d = sp.csr_matrix(a1d)
-
-        stencil = [1. / 10, 1, 1. / 10]
-        diags = [-1, 0, 1]
-        M = sp.diags(stencil, diags, shape=(N + 2, N + 2), format='lil')[1:-1, :]
-        bla = np.zeros(N + 2)
-        bla[0:2] = np.array([1., 11.])
-        M = sp.vstack([bla, M, bla[::-1]])
-        #print(M.todense())
-        M = sp.csc_matrix(M)
-
-        bla = sla.inv(M)[1:-1, 1:-1].dot(a1d[1:-1, 1:-1])
-
-        return sla.inv(M).dot(a1d)
-
-    @staticmethod
-    def __get_A_cmpct_expl_boundary(N, dx):
-        """
-        Helper function to assemble FD matrix A in sparse format
-
-        Args:
-            N (int): number of dofs
-            dx (float): distance between two spatial nodes
-
-        Returns:
-            scipy.sparse.csc_matrix: matrix A in CSC format
-        """
-
-        a = 6. / 5
-        stencil = [a, -2 * a, a]
-        diags = [-1, 0, 1]
-        a1d = sp.diags(stencil, diags, shape=(N + 2, N + 2), format='lil')[1:-1, :]
-
-        bla = np.zeros(N + 2)
-        bla[0:5] = np.array([35./12, -26./3, 19./2, -14./3, 11./12])
-        a1d = sp.vstack([bla, a1d, bla[::-1]])
-        # print(a1d.todense())
-        a1d *= 1.0 / (dx ** 2)
-        a1d = sp.csr_matrix(a1d)
-
-        stencil = [1. / 10, 1, 1. / 10]
-        diags = [-1, 0, 1]
-        M = sp.diags(stencil, diags, shape=(N + 2, N + 2), format='lil')[1:-1, :]
-        bla = np.zeros(N + 2)
-        bla[0] = 1.
-        M = sp.vstack([bla, M, bla[::-1]])
-        # print(M.todense())
-        M = sp.csr_matrix(M)
-
-        bla = sla.inv(M)[1:-1, 1:-1].dot(a1d[1:-1, 1:-1])
-
-        return sla.inv(M).dot(a1d)
-
     # noinspection PyTypeChecker
     def solve_system(self, rhs, factor, u0, t):
+        u = self.dtype_u(u0)
+        self.factor = factor
+
+        u.values, = self._mg.mg_iter(np.array([u0.values]), np.array([rhs.values]), self.params.mg_restol, t, nu1=1, nu2=1)
+
+        return u
+
+    # noinspection PyTypeChecker
+    def solve_system_newton(self, rhs, factor, u0, t):
         """
         Simple Newton solver
 
@@ -191,12 +156,6 @@ class generalized_fisher(ptype):
             # if g is close to 0, then we are done
             res = np.linalg.norm(g, np.inf)
 
-            #plt.ylim(ymax=1e-6, ymin=-1e-6)
-            #plt.plot(g)
-            #plt.show()
-            #plt.pause(1)
-            #plt.close()
-
             if res < self.params.newton_tol:
                 break
 
@@ -213,6 +172,22 @@ class generalized_fisher(ptype):
         return u
 
     def eval_f(self, u, t):
+        """
+        Routine to evaluate the RHS
+
+        Args:
+            u (dtype_u): current values
+            t (float): current time
+
+        Returns:
+            dtype_f: the RHS
+        """
+        f = self.dtype_f(self.init)
+        uext = self.rdmodel.extend(np.array([u.values]), t)
+        f.values, = self.rdmodel.eval_rhs_wb(uext)
+        return f
+
+    def eval_f_newton(self, u, t):
         """
         Routine to evaluate the RHS
 
