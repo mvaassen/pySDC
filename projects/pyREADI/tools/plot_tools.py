@@ -173,7 +173,7 @@ def inner_approx_field_of_values(A, n):
         # print p_thetas[-1]
     p = np.asarray(p_thetas).flatten()
     real_part = np.real(p)
-    print np.min(real_part)
+    print(np.min(real_part))
     img_part = np.imag(p)
     fig, ax = plt.subplots()
     ax.plot(real_part, img_part, 'ro')

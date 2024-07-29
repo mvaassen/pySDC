@@ -1,6 +1,6 @@
 import numpy as np
 import scipy.sparse as sp
-from transfer_base import TransferBase
+from projects.pyREADI.fas.transfer_base import TransferBase
 
 
 class LinearTransferND(TransferBase):

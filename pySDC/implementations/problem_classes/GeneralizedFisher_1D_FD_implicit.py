@@ -50,7 +50,7 @@ class generalized_fisher(ptype):
         #self.A = self.__get_A(self.params.nvars, self.dx)
         if self.params.expl_boundary:
             print('hello')
-            #self.A = self.__get_A_cmpct_expl_boundary(self.params.nvars, self.dx)
+            self.A = self.__get_A_cmpct_expl_boundary(self.params.nvars, self.dx)
         else:
             print('hello')
             self.A = self.__get_A_cmpct(self.params.nvars, self.dx)
@@ -95,6 +95,9 @@ class generalized_fisher(ptype):
 
         bla = np.zeros(N + 2)
         bla[0:4] = np.array([13., -27., 15., -1.])
+        print(bla)
+        print(a1d.todense())
+        print(bla[::-1])
         a1d = sp.vstack([bla, a1d, bla[::-1]])
         #print(a1d.todense())
         a1d *= 1.0 / (dx ** 2)

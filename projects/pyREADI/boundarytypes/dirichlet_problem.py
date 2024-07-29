@@ -1,3 +1,5 @@
+import functools
+
 import numpy as np
 
 from projects.pyREADI.boundarytypes.b_type_base import BoundaryValueProblemBase
@@ -23,7 +25,7 @@ class DirichletProblem(BoundaryValueProblemBase):
 
     def _generate_dirichlet_non_b_mask(self):
         mask_1d = np.concatenate(([False], np.ones(self.rdmodel.params.nvars, dtype=bool), [False]))
-        return reduce(np.kron, [mask_1d] * self.rdmodel.params.ndims)
+        return functools.reduce(np.kron, [mask_1d] * self.rdmodel.params.ndims)
 
     def extend(self, u_red, t):
         # extends u_inner to the boundary

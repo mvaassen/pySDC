@@ -10,25 +10,25 @@ from scipy.sparse.linalg import spsolve
 from pySDC.core.Problem import ptype
 from pySDC.core.Errors import ParameterError, ProblemError
 
-# from projects.pyREADI.rdmodels.generalized_fisher_1d import GeneralizedFisher1D
-# from projects.pyREADI.tstepping.impl_euler_new import ImplEulerScheme
-# from projects.pyREADI.tstepping.implicit_timestepper import ImplicitTimeIntegrator
-# from projects.pyREADI.tstepping.fwd_euler import solve_t
-# from projects.pyREADI.fdschemes.lap_4th_cpact_1d import Lap4thCpact1D
-# from projects.pyREADI.boundarytypes.dirichlet_problem import DirichletProblem
-# from projects.pyREADI.fas.fas_multigrid import FASMultigrid
-# from projects.pyREADI.fas.linear_transfer_nd import LinearTransferND
-# from projects.pyREADI.fas.nonlinear_gauss_seidel import NonlinearGaussSeidel
+from projects.pyREADI.rdmodels.generalized_fisher_1d import GeneralizedFisher1D
+from projects.pyREADI.tstepping.impl_euler_new import ImplEulerScheme
+from projects.pyREADI.tstepping.implicit_timestepper import ImplicitTimeIntegrator
+from projects.pyREADI.tstepping.fwd_euler import solve_t
+from projects.pyREADI.fdschemes.lap_4th_cpact_1d import Lap4thCpact1D
+from projects.pyREADI.boundarytypes.dirichlet_problem import DirichletProblem
+from projects.pyREADI.fas.fas_multigrid import FASMultigrid
+from projects.pyREADI.fas.linear_transfer_nd import LinearTransferND
+from projects.pyREADI.fas.nonlinear_gauss_seidel import NonlinearGaussSeidel
 
-from rdmodels.generalized_fisher_1d import GeneralizedFisher1D
-from tstepping.impl_euler_new import ImplEulerScheme
-from tstepping.implicit_timestepper import ImplicitTimeIntegrator
-from tstepping.fwd_euler import solve_t
-from fdschemes.lap_4th_cpact_1d import Lap4thCpact1D
-from boundarytypes.dirichlet_problem import DirichletProblem
-from fas.fas_multigrid import FASMultigrid
-from fas.linear_transfer_nd import LinearTransferND
-from fas.nonlinear_gauss_seidel import NonlinearGaussSeidel
+# from rdmodels.generalized_fisher_1d import GeneralizedFisher1D
+# from tstepping.impl_euler_new import ImplEulerScheme
+# from tstepping.implicit_timestepper import ImplicitTimeIntegrator
+# from tstepping.fwd_euler import solve_t
+# from fdschemes.lap_4th_cpact_1d import Lap4thCpact1D
+# from boundarytypes.dirichlet_problem import DirichletProblem
+# from fas.fas_multigrid import FASMultigrid
+# from fas.linear_transfer_nd import LinearTransferND
+# from fas.nonlinear_gauss_seidel import NonlinearGaussSeidel
 
 
 # noinspection PyUnusedLocal
